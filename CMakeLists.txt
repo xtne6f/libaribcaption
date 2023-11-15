@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.11)
 
 project(libaribcaption
     VERSION
-        1.0.1
+        1.1.1
     DESCRIPTION
         "Portable ARIB STD-B24 Caption Decoder/Renderer"
     HOMEPAGE_URL
@@ -244,6 +244,8 @@ if(NOT ARIBCC_NO_RENDERER)
         src/renderer/renderer_impl.hpp
         src/renderer/text_renderer.cpp
         src/renderer/text_renderer.hpp
+        $<$<BOOL:${ARIBCC_USE_FREETYPE}>:src/renderer/open_type_gsub.cpp>
+        $<$<BOOL:${ARIBCC_USE_FREETYPE}>:src/renderer/open_type_gsub.hpp>
         $<$<BOOL:${ARIBCC_USE_CORETEXT}>:src/renderer/text_renderer_coretext.cpp>
         $<$<BOOL:${ARIBCC_USE_CORETEXT}>:src/renderer/text_renderer_coretext.hpp>
         $<$<BOOL:${ARIBCC_USE_DIRECTWRITE}>:src/renderer/text_renderer_directwrite.cpp>

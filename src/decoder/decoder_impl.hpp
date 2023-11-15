@@ -107,8 +107,8 @@ private:
     Profile profile_ = Profile::kDefault;
     LanguageId language_id_ = LanguageId::kDefault;
 
-    bool replace_msz_fullwidth_ascii_ = false;
-    bool replace_msz_fullwidth_ja_ = false;
+    bool replace_msz_fullwidth_ascii_ = true;
+    bool replace_msz_fullwidth_ja_ = true;
 
     std::unordered_map<uint32_t, uint32_t> replace_fullwidth_ascii_map_;
     std::unordered_map<uint32_t, uint32_t> replace_fullwidth_ja_map_;
